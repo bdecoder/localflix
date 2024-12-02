@@ -1,0 +1,5 @@
+1 décembre:
+création de l'organigrame du site
+
+2 décembre:
+création du bandeau frontal et du footer
