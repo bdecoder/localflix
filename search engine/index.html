@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Film Search Engine</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Film Search Engine</h1>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Rechercher..." onkeyup="searchMovies()">
+    </div>
+    
+    <div class="filters">
+      <label><input type="checkbox" id="searchByName" checked> Nom</label>
+      <label><input type="checkbox" id="searchByActor" checked> Acteur</label>
+      <label><input type="checkbox" id="searchByGenre" checked> Genre</label>
+      <label><input type="checkbox" id="searchByTag" checked> Tag</label>
+    </div>
+    
+    <div id="results">
+      <!-- Les résultats de la recherche seront affichés ici -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+[
+  {
+    "nom": "Inception",
+    "description": "Un voleur spécialisé dans l'extraction de secrets en pénétrant dans les rêves des autres se voit offrir une chance de rédemption en réalisant une idée dans l'esprit d'une cible.",
+    "réalisateur": "Christopher Nolan",
+    "date": "2010-07-16",
+    "acteurs": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page", "Tom Hardy"],
+    "genre": "Science-fiction, Thriller",
+    "tags": ["rêves", "inception", "action", "mystère", "psychologique"]
+  },
+  {
+    "nom": "The Shawshank Redemption",
+    "description": "Deux hommes, condamnés à la réclusion à perpétuité dans la même prison, nouent une amitié profonde et cherchent à se libérer de leurs chaînes.",
+    "réalisateur": "Frank Darabont",
+    "date": "1994-09-23",
+    "acteurs": ["Tim Robbins", "Morgan Freeman", "Bob Gunton", "William Sadler"],
+    "genre": "Drame, Crime",
+    "tags": ["amitié", "prison", "rédemption", "espoir", "drame"]
+  },
+  {
+    "nom": "The Dark Knight",
+    "description": "Batman affronte le Joker, un criminel anarchiste, qui menace de plonger Gotham dans le chaos, alors que le justicier est confronté à de nouvelles dilemmes moraux.",
+    "réalisateur": "Christopher Nolan",
+    "date": "2008-07-18",
+    "acteurs": ["Christian Bale", "Heath Ledger", "Aaron Eckhart", "Michael Caine"],
+    "genre": "Action, Crime, Drame",
+    "tags": ["super-héros", "joker", "action", "drame psychologique", "Gotham"]
+  },
+  {
+    "nom": "Pulp Fiction",
+    "description": "Des histoires entrecroisées d'un tueur à gages, d'un boxeur et de diverses figures du crime à Los Angeles, qui se révèlent dans un mélange de violence et d'humour.",
+    "réalisateur": "Quentin Tarantino",
+    "date": "1994-10-14",
+    "acteurs": ["John Travolta", "Uma Thurman", "Samuel L. Jackson", "Bruce Willis"],
+    "genre": "Crime, Drame, Comédie",
+    "tags": ["dialogues", "violence", "culte", "réalisation non linéaire", "humour noir"]
+  },
+  {
+    "nom": "The Matrix",
+    "description": "Un programmeur découvre que la réalité qu'il connaît est une simulation contrôlée par des intelligences artificielles et doit choisir entre la liberté et la sécurité.",
+    "réalisateur": "Lana Wachowski, Lilly Wachowski",
+    "date": "1999-03-31",
+    "acteurs": ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss", "Hugo Weaving"],
+    "genre": "Science-fiction, Action",
+    "tags": ["réalité virtuelle", "cyberpunk", "philosophie", "action", "rébellion"]
+  }
+]
