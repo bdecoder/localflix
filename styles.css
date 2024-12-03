@@ -33,27 +33,22 @@ html, body {
     padding: 0 10px;
 }
 
-.search_form {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+.search_container {
+    width: auto;  /* La largeur du conteneur qui prend de la place */
+    height: 100%;  /* S'assure qu'il occupe toute la hauteur de .bandeau */
+    align-items: center;
+
 }
 
-input[type="search"] {
-    width: 100%;
-    max-width: 250px;
-    padding: 5px;
-    height: 30px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-sizing: border-box;
+.search_logo {
+    width: auto;  /* Ajustez la largeur si nécessaire */
+    height: 100%;
 }
 
-button[type="submit"] {
-    display: none;
+.search_block {
+    visibility: hidden;
 }
+
 
 /* footer style*/
 .footer {

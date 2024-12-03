@@ -10,12 +10,14 @@
 <body>
     <main>
         <section class="bandeau">
-            <img class="logo_bandeau" src="misc/logo.png" alt="logo non disponible">  
+            <img class="logo_bandeau" src="misc/logo.png" alt="image non disponible">  
             <h2 class="titre_bandeau">LocalFlix</h2>
-            <form action="/recherche" method="get" class="search_form">
-                <input type="search" id="search-input" name="query" placeholder="Rechercher..." aria-label="Recherche">
-                <button type="submit" aria-label="rechercher">🔍</button>
-            </form>
+            <div class="search_container">
+              <a href="search.html">
+                <img class="search_logo" src="misc/search.png" alt="image non disponible"> 
+              </a>
+              <img class="search_block" src="misc/blank.png">
+            </div>
           </section>
         <section class="corps"></section>
         <section class="footer">
