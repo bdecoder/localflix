@@ -1,0 +1,58 @@
+/* Conteneur vidéo */
+.video-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 70px;
+}
+
+#film-video {
+  width: 100%; /
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Film Info */
+.film-info {
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  max-width: 800px;
+}
+
+.film-info h3 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.film-info p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.film-info strong {
+  font-weight: 700;
+  color: #ff9800;
+}
+
+/* Mise en page responsive pour la vidéo */
+@media (max-width: 768px) {
+  .video-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 400px) {
+  .video-container {
+    width: 95%;
+  }
+
+  #film-video {
+    height: 60vw;
+  }
+}

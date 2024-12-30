@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>LocalFlix</title>
+</head>
+<body>
+    <section class="bandeau">
+        <img class="logo_bandeau" src="misc/logo.png" alt="image non disponible">
+        <h2 class="titre_bandeau">LocalFlix</h2>
+        <div class="search_container">
+            <a href="search.html">
+                <img class="search_logo" src="misc/search.png" alt="image non disponible">
+            </a>
+            <img class="search_block" src="misc/blank.png">
+        </div>
+    </section>
+
+    <main>
+        <div class="films-container">
+            <h2 class="section-title">Films</h2>
+            <div class="films-content">
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <section class="footer">
+        <p class="description_footer">
+            Educational Purposes Only, created by BDecoder in December 2024
+        </p>
+        <div class="logo_footer_container">
+            <a href="https://github.com/bdecoder/Bdecoder">
+                <img class="logo_footer" src="misc/github_logo.png" alt="Logo">
+            </a>
+            <a href="https://github.com/bdecoder/Bdecoder">
+                <img class="logo_footer" src="misc/github_logo.png" alt="Logo">
+            </a>
+            <a href="https://github.com/bdecoder/Bdecoder">
+                <img class="logo_footer" src="misc/github_logo.png" alt="Logo">
+            </a>
+            <a href="https://github.com/bdecoder/Bdecoder">
+                <img class="logo_footer" src="misc/github_logo.png" alt="Logo">
+            </a>
+            <a href="https://github.com/bdecoder/Bdecoder">
+                <img class="logo_footer" src="misc/github_logo.png" alt="Logo">
+            </a>
+            <a href="https://github.com/bdecoder/Bdecoder">
+                <img class="logo_footer" src="misc/github_logo.png" alt="Logo">
+            </a>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Fonction pour charger le fichier JSON
+            fetch('films.json')
+                .then(response => response.json())
+                .then(data => {
+                    const filmsContainer = document.querySelector('.films-content');
+
+                    // Boucle à travers tous les films
+                    Object.values(data).forEach(category => {
+                        category.forEach(film => {
+                            const filmButton = document.createElement('button');
+                            filmButton.onclick = () => window.location.href = film.videoLink; // Redirige vers le lien de la vidéo
+
+                            const filmImage = document.createElement('img');
+                            filmImage.src = film.thumbnail;
+                            filmImage.alt = `Thumbnail de ${film.title}`;
+                            filmImage.classList.add('film-thumbnail');  // Ajoute une classe pour styliser l'image
+                            filmButton.appendChild(filmImage);
+
+                            const filmTitle = document.createElement('span');
+                            filmTitle.classList.add('movie-title');
+                            filmTitle.textContent = film.title;
+                            filmButton.appendChild(filmTitle);
+
+                            filmsContainer.appendChild(filmButton);
+                        });
+                    });
+                })
+                .catch(error => console.error('Erreur lors du chargement du fichier JSON:', error));
+        });
+    </script>
+</body>
+</html>

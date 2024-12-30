@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/viewer.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Visionner - LocalFlix</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="bandeau">
+            <a href="index.html">
+                <img class="logo_bandeau" src="misc/logo.png" alt="image non disponible">
+            </a>
+            <h2 class="titre_bandeau">LocalFlix</h2>
+            <div class="search_container">
+                <a href="search.html">
+                    <img class="search_logo" src="misc/search.png" alt="Logo recherche">
+                </a>
+                <img class="search_block" src="misc/blank.png" alt="bloc recherche">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <br>
+            <br>
+        </section>
+        <section class="video-container">
+            <video id="film-video" controls>
+            </video>
+        </section>
+
+        <section class="film-info">
+            <h3 id="film-title">Titre du film</h3>
+            <p><strong>Catégorie:</strong> <span id="film-category">Catégorie du film</span></p>
+            <p><strong>Tags:</strong> <span id="film-tags">Liste des tags</span></p>
+            <p><strong>Réalisateur:</strong> <span id="film-director">Réalisateur du film</span></p>
+            <p><strong>Description:</strong> <span id="film-description">Description du film</span></p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="description_footer">Educational Purposes Only, created by BDecoder in December 2024</p>
+        <div class="logo_footer_container">
+            <a href="https://github.com/bdecoder/Bdecoder">
+                <img class="logo_footer" src="misc/github_logo.png" alt="Logo GitHub">
+            </a>
+        </div>
+    </footer>
+
+    <script src="js/viewer.js"></script>
+
+</body>
+
+</html>

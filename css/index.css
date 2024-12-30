@@ -1,0 +1,113 @@
+/* Statistiques */
+.statistiques-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.statistiques-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.statistiques-content ul li {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #ddd;
+}
+
+/* Catégories */
+.categories-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.categories-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.categorie-button {
+  padding: 8px 15px;
+  border: none;
+  background-color: #333;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 5px;
+}
+
+.categorie-button:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+.categorie-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+/* Mise en page responsive pour les boutons */
+@media (max-width: 600px) {
+  .categorie-button {
+    font-size: 13px;
+    padding: 6px 12px;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 400px) {
+  .categorie-button {
+    font-size: 12px;
+    padding: 5px 10px;
+    min-width: 90px;
+  }
+}
+
+/* Derniers films */
+.last-films-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.film-thumbnail-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: inline-block;
+  width: calc(20% - 10px);
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.film-thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.film-thumbnail:hover {
+  transform: scale(1.1);
+}

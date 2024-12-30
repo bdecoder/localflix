@@ -1,0 +1,89 @@
+/* Container des films par tag */
+.films-by-tag-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.films-by-tag-container h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Conteneur de chaque film */
+.film-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.film-thumbnail-container {
+  margin-right: 20px;
+}
+
+.film-thumbnail {
+  width: 150px;
+  height: 100px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Informations du film */
+.film-info {
+  flex-grow: 1;
+}
+
+.film-info h3 {
+  margin: 0;
+  font-size: 20px;
+  color: white;
+}
+
+.film-info p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #bbb;
+}
+
+.film-info strong {
+  color: #fff;
+}
+
+.film-info button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.film-info button:hover {
+  background-color: #666;
+}
+
+/* Adaptation pour les écrans plus petits */
+@media (max-width: 768px) {
+  .film-thumbnail {
+    width: 120px;
+    height: 80px;
+  }
+
+  .film-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .film-info {
+    text-align: center;
+  }
+}

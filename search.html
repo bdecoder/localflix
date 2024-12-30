@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Search - LocalFlix</title>
+</head>
+<body>
+    <header>
+        <nav class="bandeau">
+            <a href="index.html">
+                <img class="logo_bandeau" src="misc/logo.png" alt="image non disponible">
+            </a>
+            <h2 class="titre_bandeau">LocalFlix</h2>
+            <div class="search_container">
+                <a href="index.html">
+                    <img class="search_logo" src="misc/search.png" alt="image non disponible">
+                </a>
+                <img class="search_block" src="misc/blank.png">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </section>
+        <section class="search-container">
+            <h2>Rechercher un Film</h2>
+            <input type="text" id="search-query" placeholder="Entrez un terme de recherche...">
+
+            <div class="filter-options">
+                <label><input type="radio" name="search-filter" id="search-by-name"> Par nom</label>
+                <label><input type="radio" name="search-filter" id="search-by-tag"> Par tag</label>
+                <label><input type="radio" name="search-filter" id="search-by-category"> Par catégorie</label>
+                <label><input type="radio" name="search-filter" id="search-by-director"> Par réalisateur</label>
+                <label><input type="radio" name="search-filter" id="search-by-actors"> Par acteurs</label>
+            </div>
+        </section>
+
+        <section id="search-results">
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="description_footer">Educational Purposes Only, created by BDecoder in December 2024</p>
+        <div class="logo_footer_container">
+            <a href="https://github.com/bdecoder/Bdecoder">
+                <img class="logo_footer" src="misc/github_logo.png" alt="Logo">
+            </a>
+        </div>
+    </footer>
+
+    <script src="js/search.js"></script>
+</body>
+</html>
