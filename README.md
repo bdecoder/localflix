@@ -20,12 +20,24 @@
 
 - Python 3.7+.
 - **ffmpeg** (pour la conversion vidéo) installé sur votre machine.
-- **Node.js** et **npm** (si vous souhaitez exécuter le projet côté client pour la recherche dynamique).
-
-## Installation
+## Installation et utilisation
 
 ### 1. Cloner ce repository
 
 ```bash
 git clone https://github.com/ton-utilisateur/localflix.git
+```
+
+### 2. Lancer le serveur web
+```bash
 cd localflix
+python3 -m http.server 8080
+```
+Puis aller sur http://localhost:8080 dans votre navigateur
+
+### 3. ajouter un film
+```bash
+cd localflix
+python3 app.py
+```
+A noter que le chemin vers le fichier doit être absolu
