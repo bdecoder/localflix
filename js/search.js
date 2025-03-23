@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     const searchQuery = document.getElementById('search-query');
     const searchResultsContainer = document.getElementById('search-results');
+    const searchByFilm = document.getElementById('search-by-film');
+    const searchByCollection = document.getElementById('search-by-collection');
+    const filterOptions = document.getElementById('filter-options');
     const searchByName = document.getElementById('search-by-name');
     const searchByTag = document.getElementById('search-by-tag');
     const searchByCategory = document.getElementById('search-by-category');
@@ -8,7 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchByActors = document.getElementById('search-by-actors');
     let debounceTimer;
 
-    function searchFilms(query) {
+    // Fonction de recherche
+    function search(query, isCollectionSearch) {
+        console.log("DEBUG: Recherche en cours pour : " + query);
+
         if (!query.trim()) {
             searchResultsContainer.style.display = 'none';
             return;
@@ -16,103 +22,107 @@ document.addEventListener('DOMContentLoaded', function () {
 
         searchResultsContainer.style.display = 'block';
 
-        fetch('films.json')
+        const fileToFetch = isCollectionSearch ? 'images.json' : 'films.json';
+        fetch(fileToFetch)
             .then(response => response.json())
-            .then(films => {
-                console.log('Films loaded:', films);
-
+            .then(data => {
+                console.log("DEBUG: Données chargées:", data);
                 const searchTerms = query.toLowerCase().split(/\s+/);
 
-                const filteredFilms = films.filter(film => {
+                const filteredResults = data.filter(item => {
                     let matches = true;
-
-                    console.log('Film:', film);
-
                     if (searchByName.checked) {
-                        matches = matches && searchTerms.every(term => film.title.toLowerCase().includes(term));
+                        matches = matches && searchTerms.every(term => item.title.toLowerCase().includes(term));
                     }
 
                     if (searchByTag.checked) {
-                        matches = matches && searchTerms.every(term => film.tags.some(tag => tag.toLowerCase().includes(term)));
+                        matches = matches && searchTerms.every(term => item.tags && item.tags.some(tag => tag.toLowerCase().includes(term)));
                     }
 
                     if (searchByCategory.checked) {
-                        matches = matches && searchTerms.every(term => film.category.toLowerCase().includes(term));
+                        matches = matches && searchTerms.every(term => item.category && item.category.toLowerCase().includes(term));
                     }
 
                     if (searchByDirector.checked) {
-                        if (!film.director) {
-                            matches = false;
+                        if (item.director) {
+                            matches = matches && searchTerms.every(term => item.director.toLowerCase().includes(term));
                         } else {
-                            matches = matches && searchTerms.every(term => film.director.toLowerCase().includes(term));
+                            matches = false;
                         }
                     }
 
                     if (searchByActors.checked) {
-                        if (!film.actors || film.actors.length === 0) {
-                            matches = false;
+                        if (item.actors && item.actors.length > 0) {
+                            matches = matches && searchTerms.every(term => item.actors.some(actor => actor.toLowerCase().includes(term)));
                         } else {
-                            matches = matches && searchTerms.every(term => film.actors.some(actor => actor.toLowerCase().includes(term)));
+                            matches = false;
                         }
                     }
 
                     return matches;
                 });
 
-                console.log('Filtered Films:', filteredFilms);
+                console.log("DEBUG: Résultats filtrés:", filteredResults);
 
-                displaySearchResults(filteredFilms);
+                displaySearchResults(filteredResults, isCollectionSearch);
             })
             .catch(error => {
-                console.error('Error loading films:', error);
+                console.error('Erreur lors du chargement des données:', error);
             });
     }
 
-    function displaySearchResults(films) {
+    // Fonction d'affichage des résultats
+    function displaySearchResults(results, isCollectionSearch) {
         searchResultsContainer.innerHTML = '';
-        if (films.length === 0) {
-            searchResultsContainer.innerHTML = '<p>No films found</p>';
+        if (results.length === 0) {
+            searchResultsContainer.innerHTML = '<p>Aucun résultat trouvé</p>';
             return;
         }
 
-        films.forEach(film => {
-            const filmElement = document.createElement('div');
-            filmElement.classList.add('search-result');
+        results.forEach(result => {
+            const resultElement = document.createElement('div');
+            resultElement.classList.add('search-result');
 
-            const filmLink = document.createElement('a');
-            filmLink.href = `viewer.html?id=${film.id}`;
-            filmLink.classList.add('search-result-link');
+            const resultLink = document.createElement('a');
+            resultLink.href = isCollectionSearch ? `collection.html?id=${result.id}` : `viewer.html?id=${result.id}`;
+            resultLink.classList.add('search-result-link');
 
-            filmLink.innerHTML = `
-                <img src="${film.thumbnail}" alt="${film.title}" class="result-thumbnail">
+            const previewImage = isCollectionSearch ? result.images[0] : result.thumbnail;
+
+            resultLink.innerHTML = `
+                <img src="${previewImage}" alt="${result.title}" class="result-thumbnail">
                 <div class="result-details">
-                    <h3>${film.title}</h3>
-                    <p>Category: ${film.category}</p>
-                    <p>Tags: ${film.tags ? film.tags.join(', ') : 'No tags available'}</p>
-                    <p>Director: ${film.director || 'Director not available'}</p>
-                    <p>Actors: ${film.actors && film.actors.length > 0 ? film.actors.join(', ') : 'No actors available'}</p>
+                    <h3>${result.title}</h3>
+                    <p>Category: ${result.category || 'N/A'}</p>
+                    <p>Tags: ${result.tags ? result.tags.join(', ') : 'No tags available'}</p>
+                    <p>Director: ${result.director || 'Director not available'}</p>
+                    <p>Actors: ${result.actors ? result.actors.join(', ') : 'No actors available'}</p>
                 </div>
             `;
 
-            filmElement.appendChild(filmLink);
-            searchResultsContainer.appendChild(filmElement);
+            resultElement.appendChild(resultLink);
+            searchResultsContainer.appendChild(resultElement);
         });
     }
 
+    // Lancement de la recherche après saisie
     searchQuery.addEventListener('input', function () {
         clearTimeout(debounceTimer);
         const query = searchQuery.value;
+        const isCollectionSearch = searchByCollection.checked;
 
         debounceTimer = setTimeout(() => {
-            searchFilms(query);
-        }, 100);
+            search(query, isCollectionSearch);
+        }, 300);
     });
 
-    const radioButtons = [searchByName, searchByTag, searchByCategory, searchByDirector, searchByActors];
+    // Mise à jour du filtre en fonction du choix (film ou collection)
+    const radioButtons = [searchByFilm, searchByCollection, searchByName, searchByTag, searchByCategory, searchByDirector, searchByActors];
     radioButtons.forEach(button => {
         button.addEventListener('change', function () {
             const query = searchQuery.value;
-            searchFilms(query);
+            const isCollectionSearch = searchByCollection.checked;
+            search(query, isCollectionSearch);
         });
     });
 });

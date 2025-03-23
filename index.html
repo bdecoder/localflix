@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="css/index.css">
     <title>LocalFlix</title>
 </head>
+
 <body>
     <main>
         <section class="bandeau">
@@ -21,6 +23,7 @@
                 <img class="search_block" src="misc/blank.png">
             </div>
         </section>
+
         <section>
             <br>
             <br>
@@ -28,9 +31,12 @@
             <br>
             <br>
         </section>
+
+        <!-- Section des statistiques des genres -->
         <section class="statistiques-container">
-            <h2 class="section-title">Catégories</h2>
-            <div id="statistiques-content"></div>
+            <h2 class="section-title">Statistiques des Genres</h2>
+            <div id="films-genre-container"></div>
+            <div id="collections-genre-container"></div>
         </section>
 
         <section class="categories-container">
@@ -39,10 +45,18 @@
             </div>
         </section>
 
+        <!-- Section pour afficher les films -->
         <section class="last-films-container">
             <h2 class="section-title">Nouveaux films</h2>
             <div id="films-content"></div>
         </section>
+
+        <!-- Section pour afficher les collections -->
+        <section class="last-films-container">
+            <h2 class="section-title">Nouvelles collections</h2>
+            <div id="collections-content"></div>
+        </section>
+
     </main>
 
     <footer class="footer">
@@ -56,4 +70,5 @@
 
     <script src="js/script.js"></script>
 </body>
+
 </html>

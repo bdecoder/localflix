@@ -1,0 +1,4 @@
+customtkinter
+moviepy==1.0.3
+pillow
+tk

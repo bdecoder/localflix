@@ -8,15 +8,18 @@
   color: #fff;
 }
 
-.statistiques-content ul {
-  list-style: none;
-  padding: 0;
+.statistiques-container h2 {
+  font-size: 24px;
+  color: #fff;
 }
 
-.statistiques-content ul li {
-  margin: 5px 0;
-  font-size: 16px;
+.statistiques-container div {
+  margin-top: 10px;
   color: #ddd;
+}
+
+.statistiques-container div strong {
+  font-weight: bold;
 }
 
 /* Catégories */
@@ -109,5 +112,34 @@
 }
 
 .film-thumbnail:hover {
+  transform: scale(1.1);
+}
+
+.last-collections-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.collection-thumbnail-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: inline-block;
+  width: calc(20% - 10px); /* Largeur similaire aux films */
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.collection-thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.collection-thumbnail:hover {
   transform: scale(1.1);
 }

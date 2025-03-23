@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/viewer.css">
+    <link rel="stylesheet" href="css/collection.css">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Visionner - LocalFlix</title>
+    <title>Collection - LocalFlix</title>
 </head>
 
 <body>
@@ -28,23 +28,22 @@
 
     <main>
         <section>
-            <br>
-            <br>
+            <br><br><br><br><br>
         </section>
-        <section class="video-container">
-            <video id="film-video" controls>
-            </video>
+        <section class="collection-container">
+            <h1 id="collection-title">Titre de la collection</h1>
+            <p><strong>Réalisateur :</strong> <span id="collection-director"></span></p>
+            <p><strong>Acteurs :</strong> <span id="collection-actors"></span></p>
+            <p><strong>Tags :</strong> <span id="collection-tags"></span></p>
         </section>
 
-        <section class="film-info">
-            <h3 id="film-title">Titre du film</h3>
-            <p><strong>Catégorie:</strong> <span id="film-category">Catégorie du film</span></p>
-            <p><strong>Tags:</strong> <span id="film-tags">Liste des tags</span></p>
-            <p><strong>Réalisateur:</strong> <span id="film-director">Réalisateur du film</span></p>
-            <p><strong>Acteurs:</strong> <span id="film-actors">Acteurs du film</span></p>
-            <p><strong>Description:</strong> <span id="film-description">Description du film</span></p>
+        <section class="gallery">
+            <!-- Les images de la collection seront insérées ici dynamiquement -->
         </section>
     </main>
+            <section>
+            <br>
+        </section>
 
     <footer class="footer">
         <p class="description_footer">Educational Purposes Only, created by BDecoder in December 2024</p>
@@ -55,7 +54,7 @@
         </div>
     </footer>
 
-    <script src="js/viewer.js"></script>
+    <script src="js/collection.js"></script>
 
 </body>
 

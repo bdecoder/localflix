@@ -1,0 +1,78 @@
+.
+├── 1.mp4
+├── category.html
+├── collection.html
+├── collections
+│   ├── collection1
+│   │   ├── image1.jpg
+│   │   ├── image2.jpg
+│   │   └── image3.jpg
+│   ├── collection2
+│   │   ├── image1.jpg
+│   │   ├── image2.jpg
+│   │   ├── image3.jpg
+│   │   └── image4.jpg
+│   ├── Mer_et_foret
+│   │   ├── aaa.jpg
+│   │   ├── ima.jpg
+│   │   ├── imb.jpg
+│   │   └── imc.jpg
+│   └── titrea
+│       ├── collection1_image1.jpg
+│       ├── collection1_image2.jpg
+│       ├── collection1_image3.jpg
+│       ├── collection2_image1.jpg
+│       ├── collection2_image2.jpg
+│       ├── collection2_image3.jpg
+│       ├── collection2_image4.jpg
+│       └── testtitle.jpg
+├── config.txt
+├── css
+│   ├── collection.css
+│   ├── index.css
+│   ├── search.css
+│   ├── styles.css
+│   ├── tag.css
+│   └── viewer.css
+├── films
+│   ├── ab.mp4
+│   ├── a_hacking_video_title.mp4
+│   ├── a.mp4
+│   ├── hacking_video_title.mp4
+│   ├── hacking_videp.mp4
+│   ├── mon_titre.mp4
+│   ├── my_movie_title.mp4
+│   └── to_delete.txt
+├── films.json
+├── images.json
+├── img.py
+├── index.html
+├── js
+│   ├── collection.js
+│   ├── script.js
+│   ├── search.js
+│   ├── tag.js
+│   └── viewer.js
+├── misc
+│   ├── add.png
+│   ├── blank.png
+│   ├── default_thumbnail.jpg
+│   ├── github_logo.png
+│   ├── icon.png
+│   ├── logo.png
+│   └── search.png
+├── movie.py
+├── search.html
+├── tag.html
+├── thumbnails
+│   ├── a_hacking_video_title.jpg
+│   └── my_movie_title.jpg
+├── tmp.py
+├── tmp.txt
+├── TOMOVE
+│   ├── img.py
+│   ├── js
+│   │   └── viewer.js
+│   ├── movie.py
+│   └── viewer.html
+└── viewer.html

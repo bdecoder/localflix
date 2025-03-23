@@ -15,7 +15,7 @@
             </a>
             <h2 class="titre_bandeau">LocalFlix</h2>
             <div class="search_container">
-                <a href="index.html">
+                <a href="search.html">
                     <img class="search_logo" src="misc/search.png" alt="image non disponible">
                 </a>
                 <img class="search_block" src="misc/blank.png">
@@ -25,17 +25,19 @@
 
     <main>
         <section>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+            <br><br><br><br><br>
         </section>
         <section class="search-container">
-            <h2>Rechercher un Film</h2>
+            <h2>Rechercher</h2>
+
+            <div class="search-type">
+                <label><input type="radio" name="search-type" id="search-by-film" checked> Chercher dans les films</label>
+                <label><input type="radio" name="search-type" id="search-by-collection"> Chercher dans les collections</label>
+            </div>
+
             <input type="text" id="search-query" placeholder="Entrez un terme de recherche...">
 
-            <div class="filter-options">
+            <div class="filter-options" id="filter-options">
                 <label><input type="radio" name="search-filter" id="search-by-name"> Par nom</label>
                 <label><input type="radio" name="search-filter" id="search-by-tag"> Par tag</label>
                 <label><input type="radio" name="search-filter" id="search-by-category"> Par catégorie</label>

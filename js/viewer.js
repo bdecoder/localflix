@@ -11,7 +11,8 @@ window.onload = function () {
                 document.getElementById('film-category').innerText = film.category;
                 document.getElementById('film-tags').innerText = film.tags.join(', ');
                 document.getElementById('film-director').innerText = film.director;
-                document.getElementById('film-description').innerText = film.description;
+                document.getElementById('film-actors').innerText = film.actors;
+                document.getElementById('film-description').innerText = film.plot;
 
                 const videoElement = document.getElementById('film-video');
                 videoElement.src = film.video;
